@@ -1,0 +1,9 @@
+Package: com.christopher.everest
+Name: Everest
+Version: 0.0.1-concept1
+Architecture: iphoneos-arm
+Description: App icon animations
+Maintainer: Christopher Anderson
+Author: Christopher Anderson
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
