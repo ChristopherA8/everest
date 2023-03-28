@@ -1,6 +1,6 @@
 <picture>
-	<source media="(prefers-color-scheme: light)" srcset="https://repo.chr1s.dev/assets/Olympus/banner_dark-min.png">
-	<img align="left" height="120" src="https://repo.chr1s.dev/assets/Olympus/banner_light-min.png" alt="Olympus logo" style="float: left;"/>
+	<source media="(prefers-color-scheme: light)" srcset="https://repo.chr1s.dev/assets/Everest/everest_dark-min.png">
+	<img align="left" height="120" src="https://repo.chr1s.dev/assets/Everest/everest_light-min.png" alt="Everest logo" style="float: left;"/>
 </picture>
 <h3 align="right">App launch animations for iOS 14.x-16.x, <br>built with Theos/Luz</h3> 
 
