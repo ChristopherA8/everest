@@ -15,4 +15,4 @@
 </p>
 <div class="clear"></div>
 
-## Rootless version for palera1n/fugu15/bakera1n etc...
+## ~~Rootless version for palera1n/fugu15/bakera1n etc...~~ Rootfull version
