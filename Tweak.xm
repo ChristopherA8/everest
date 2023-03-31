@@ -35,7 +35,7 @@ CGFloat offset = 0.0;
 	// [%c(EverestAnimations) tadaAnimationForIconView:self withDuration:animationDuration];
 	// [%c(EverestAnimations) bounceAnimationForIconView:self withDuration:animationDuration];
 	// [%c(EverestAnimations) pulseAnimationForIconView:self withDuration:animationDuration];
-	[%c(EverestAnimations) swingAnimationForIconView:self withDuration:animationDuration];
+	// [%c(EverestAnimations) swingAnimationForIconView:self withDuration:animationDuration];
 	// [%c(EverestAnimations) hingeAnimationForIconView:self withDuration:animationDuration];
 	// [%c(EverestAnimations) dropAnimationForIconView:self withDuration:animationDuration];
 }
