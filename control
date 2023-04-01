@@ -1,6 +1,6 @@
 Package: com.christopher.everest
 Name: Everest
-Version: 0.0.1-concept1
+Version: 1.0.0
 Architecture: iphoneos-arm
 Description: App icon animations
 Maintainer: Christopher Anderson

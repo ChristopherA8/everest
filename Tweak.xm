@@ -4,12 +4,13 @@
  *                   Developer -
  *              Christopher Anderson
  *
- *                    Credits -
+ *          Some animations taken from -
  *  https://github.com/daltoniam/DCAnimationKit
  * ============================================= */
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Cephei/HBPreferences.h>
 #import "EverestAnimations.h"
 
 @interface SBIconView : UIView
@@ -17,34 +18,50 @@
 -(void)_handleTap;
 @end
 
-CGFloat animationDuration;
-CGFloat offset = 0.0;
+HBPreferences *preferences;
+CGFloat duration = 0.8f;
+CGFloat offset = 0.0f;
+int animation = 1;
 
 %hook SBIconView
 %new
 -(void)_startEverestAnimation {
-	// [%c(EverestAnimations) squeezeAnimationForIconView:self withDuration:animationDuration]; offset = 0.3;
-	// [%c(EverestAnimations) fadeOutAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) spinAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) flipVerticalOnceAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) flipVerticalAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) flipHorizontalOnceAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) flipHorizontalAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) rotateClockwiseAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) rotateCounterClockwiseAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) tadaAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) bounceAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) pulseAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) swingAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) hingeAnimationForIconView:self withDuration:animationDuration];
-	// [%c(EverestAnimations) dropAnimationForIconView:self withDuration:animationDuration];
+	animation = [preferences integerForKey:@"animation"];
+	if (animation == 1) {
+		[%c(EverestAnimations) shrinkAnimationForIconView:self withDuration:duration];
+		offset = 0.2; // launch the app 0.2 seconds before the animation finishes
+	} else if (animation == 2) {
+		[%c(EverestAnimations) fadeOutAnimationForIconView:self withDuration:duration];
+	} else if (animation == 3) {
+		[%c(EverestAnimations) flipVerticalAnimationForIconView:self withDuration:duration];
+	} else if (animation == 4) {
+		[%c(EverestAnimations) flipVerticalOnceAnimationForIconView:self withDuration:duration];
+	} else if (animation == 5) {
+		[%c(EverestAnimations) flipHorizontalAnimationForIconView:self withDuration:duration];
+	} else if (animation == 6) {
+		[%c(EverestAnimations) flipHorizontalOnceAnimationForIconView:self withDuration:duration];
+	} else if (animation == 7) {
+		[%c(EverestAnimations) rotateClockwiseAnimationForIconView:self withDuration:duration];
+	} else if (animation == 8) {
+		[%c(EverestAnimations) rotateCounterClockwiseAnimationForIconView:self withDuration:duration];
+	} else if (animation == 9) {
+		[%c(EverestAnimations) tadaAnimationForIconView:self withDuration:duration];
+	} else if (animation == 10) {
+		[%c(EverestAnimations) pulseAnimationForIconView:self withDuration:duration];
+	} else if (animation == 11) {
+		[%c(EverestAnimations) swingAnimationForIconView:self withDuration:duration];
+	} else if (animation == 12) {
+		[%c(EverestAnimations) squeezeAnimationForIconView:self withDuration:duration];
+	}
 }
 
 -(void)tapGestureDidChange:(UITapGestureRecognizer *)sender {
 	if (sender.state == UIGestureRecognizerStateEnded) {
-		[self _startEverestAnimation];
+		if (![preferences boolForKey:@"enabled"]) return [self _handleTap];
 
-		[NSTimer scheduledTimerWithTimeInterval:animationDuration - offset repeats:NO block:^(NSTimer *timer){
+		duration = [preferences floatForKey:@"duration"];
+		[self _startEverestAnimation];
+		[NSTimer scheduledTimerWithTimeInterval:duration - offset repeats:NO block:^(NSTimer *timer){
 			self.layer.transform = CATransform3DIdentity;
 			[self _handleTap];
 		}];
@@ -53,8 +70,10 @@ CGFloat offset = 0.0;
 %end
 
 %ctor {
-	NSLog(@"chris everest loaded");
-
-	// Settings
-	animationDuration = 0.8f;
+	preferences = [[HBPreferences alloc] initWithIdentifier:@"com.christopher.everestprefs"];
+	[preferences registerFloat:&duration default:0.8f forKey:@"duration"];
+	[preferences registerDefaults:@{
+        @"Enabled": @YES,
+        @"animation": @1
+    }];
 }

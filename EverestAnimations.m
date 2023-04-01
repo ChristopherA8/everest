@@ -1,7 +1,7 @@
 #include "EverestAnimations.h"
 
 @implementation EverestAnimations
-+ (void)squeezeAnimationForIconView:(UIView *)iconView
++ (void)shrinkAnimationForIconView:(UIView *)iconView
                        withDuration:(float)duration {
   [UIView animateWithDuration:duration * 0.3f
       delay:0.0f
@@ -174,5 +174,16 @@
 }
 +(void)dropAnimationForIconView:(UIView *)iconView withDuration:(float)duration {
   [iconView drop:NULL];
+}
++(void)squeezeAnimationForIconView:(UIView *)iconView withDuration:(float)duration {
+  [UIView animateWithDuration:duration // * 0.3f
+      delay:0.0f
+      options:UIViewAnimationOptionCurveEaseOut
+      animations:^{
+        CGFloat minimumSize = 0.001f;
+        iconView.transform =
+            CGAffineTransformMakeScale(minimumSize, 1);
+      }
+      completion:nil];
 }
 @end

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cellClass</key>
+			<string>KRTwitterCell</string>
+			<key>label</key>
+			<string>Christopher Anderson</string>
+			<key>accountName</key>
+			<string>ChristopherA8</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>cellClass</key>
+			<string>CAWSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.christopher.everestprefs</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Animation Duration</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>0.8</real>
+			<key>min</key>
+			<real>0</real>
+			<key>max</key>
+			<real>1.5</real>
+			<key>showValue</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.christopher.everestprefs</string>
+			<key>key</key>
+			<string>duration</string>
+			<key>label</key>
+			<string>Duration</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<integer>1</integer>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>animation</string>
+			<key>label</key>
+			<string>Animation</string>
+			<key>validTitles</key>
+			<array>
+				<string>Shrink</string>
+				<string>Fade Away</string>
+				<string>Flip Vertical</string>
+				<string>Flip Vertical Once</string>
+				<string>Flip Horizontal</string>
+				<string>Flip Horizontal Once</string>
+				<string>Rotate Clockwise</string>
+				<string>Rotate Counter Clockwise</string>
+				<string>Jiggle</string>
+				<string>Pulse</string>
+				<string>Swing</string>
+				<string>Squeeze</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+				<integer>8</integer>
+				<integer>9</integer>
+				<integer>10</integer>
+				<integer>11</integer>
+				<integer>12</integer>
+			</array>
+			<key>defaults</key>
+			<string>com.christopher.everestprefs</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Links</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Discord</string>
+			<key>url</key>
+			<string>https://discord.gg/zHN7yuGqYr</string>
+			<key>action</key>
+			<string>discord</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>PayPal</string>
+			<key>action</key>
+			<string>paypal</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Source Code</string>
+			<key>action</key>
+			<string>sourceCode</string>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Website</string>
+			<key>action</key>
+			<string>website</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>Everest</string>
+</dict>
+</plist>

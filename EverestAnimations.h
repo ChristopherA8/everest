@@ -5,7 +5,7 @@
 #define PI 3.14159265358979323846264338327950
 
 @interface EverestAnimations : NSObject
-+(void)squeezeAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
++(void)shrinkAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
 +(void)fadeOutAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
 +(void)spinAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
 +(void)flipVerticalOnceAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
@@ -20,4 +20,5 @@
 +(void)swingAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
 +(void)hingeAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
 +(void)dropAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
++(void)squeezeAnimationForIconView:(UIView *)iconView withDuration:(float)duration;
 @end
