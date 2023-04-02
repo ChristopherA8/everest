@@ -40,7 +40,7 @@
     //                                     UIViewAutoresizingFlexibleRightMargin);
     headerImageView.image = [UIImage
         imageWithContentsOfFile:
-            @"/Library/PreferenceBundles/everestprefs.bundle/everest_light.png"];
+            @"/Library/PreferenceBundles/everestprefs.bundle/banner_light.png"];
     headerImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.headerView addSubview:headerImageView];
     // 1500x750 banner.png image size
