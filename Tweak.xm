@@ -29,7 +29,6 @@ int animation = 1;
 	animation = [preferences integerForKey:@"animation"];
 	if (animation == 1) {
 		[%c(EverestAnimations) shrinkAnimationForIconView:self withDuration:duration];
-		offset = 0.2; // launch the app 0.2 seconds before the animation finishes
 	} else if (animation == 2) {
 		[%c(EverestAnimations) fadeOutAnimationForIconView:self withDuration:duration];
 	} else if (animation == 3) {
@@ -63,6 +62,7 @@ int animation = 1;
 		[self _startEverestAnimation];
 		[NSTimer scheduledTimerWithTimeInterval:duration - offset repeats:NO block:^(NSTimer *timer){
 			self.layer.transform = CATransform3DIdentity;
+			offset = 0.0f;
 			[self _handleTap];
 		}];
 	}
