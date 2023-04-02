@@ -1,5 +1,5 @@
-#import <Foundation/Foundation.h>
 #import "EVERESTRootListController.h"
+#import <Foundation/Foundation.h>
 
 @implementation EVERESTRootListController
 
@@ -38,9 +38,16 @@
     //                                     UIViewAutoresizingFlexibleLeftMargin
     //                                     |
     //                                     UIViewAutoresizingFlexibleRightMargin);
-    headerImageView.image = [UIImage
-        imageWithContentsOfFile:
-            @"/Library/PreferenceBundles/everestprefs.bundle/everest_light.png"];
+    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+      headerImageView.image = [UIImage
+          imageWithContentsOfFile:@"/Library/PreferenceBundles/"
+                                  @"everestprefs.bundle/everest_light.png"];
+    } else {
+      headerImageView.image = [UIImage
+          imageWithContentsOfFile:@"/Library/PreferenceBundles/"
+                                  @"everestprefs.bundle/everest_dark.png"];
+    }
+
     headerImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.headerView addSubview:headerImageView];
     // 1500x750 banner.png image size
@@ -109,11 +116,11 @@
 }
 
 - (NSArray *)specifiers {
-	if (!_specifiers) {
-		_specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
-	}
+  if (!_specifiers) {
+    _specifiers = [self loadSpecifiersFromPlistName:@"Root" target:self];
+  }
 
-	return _specifiers;
+  return _specifiers;
 }
 
 - (void)discord {
