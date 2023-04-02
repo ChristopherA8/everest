@@ -54,7 +54,7 @@
 			<key>cell</key>
 			<string>PSLinkListCell</string>
 			<key>default</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>detail</key>
 			<string>PSListItemsController</string>
 			<key>key</key>
@@ -63,6 +63,7 @@
 			<string>Animation</string>
 			<key>validTitles</key>
 			<array>
+				<string>Random</string>
 				<string>Shrink</string>
 				<string>Fade Away</string>
 				<string>Flip Vertical</string>
@@ -78,6 +79,7 @@
 			</array>
 			<key>validValues</key>
 			<array>
+				<integer>0</integer>
 				<integer>1</integer>
 				<integer>2</integer>
 				<integer>3</integer>

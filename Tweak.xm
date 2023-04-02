@@ -14,7 +14,7 @@
 #import "EverestAnimations.h"
 
 @interface SBIconView : UIView
--(void)_startEverestAnimation;
+-(void)_startEverestAnimation:(int)option;
 -(void)_handleTap;
 @end
 
@@ -25,8 +25,13 @@ int animation = 1;
 
 %hook SBIconView
 %new
--(void)_startEverestAnimation {
-	animation = [preferences integerForKey:@"animation"];
+-(void)_startEverestAnimation:(int)option {
+	if (option == 0) { // isRandom
+		animation = (int)arc4random_uniform(12) + 1;
+	} else {
+		animation = [preferences integerForKey:@"animation"];
+	}
+	
 	if (animation == 1) {
 		[%c(EverestAnimations) shrinkAnimationForIconView:self withDuration:duration];
 	} else if (animation == 2) {
@@ -59,7 +64,7 @@ int animation = 1;
 		if (![preferences boolForKey:@"enabled"]) return [self _handleTap];
 
 		duration = [preferences floatForKey:@"duration"];
-		[self _startEverestAnimation];
+		[self _startEverestAnimation:[preferences integerForKey:@"animation"]];
 		[NSTimer scheduledTimerWithTimeInterval:duration - offset repeats:NO block:^(NSTimer *timer){
 			self.layer.transform = CATransform3DIdentity;
 			offset = 0.0f;
@@ -74,6 +79,6 @@ int animation = 1;
 	[preferences registerFloat:&duration default:0.8f forKey:@"duration"];
 	[preferences registerDefaults:@{
         @"Enabled": @YES,
-        @"animation": @1
+        @"animation": @0
     }];
 }
