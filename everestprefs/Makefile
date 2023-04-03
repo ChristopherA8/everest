@@ -4,7 +4,7 @@ include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = everestprefs
 
-everestprefs_FILES = $(wildcard *.m)
+everestprefs_FILES = $(wildcard *.m *.x *.xm)
 everestprefs_FRAMEWORKS = UIKit
 everestprefs_PRIVATE_FRAMEWORKS = Preferences
 everestprefs_EXTRA_FRAMEWORKS = CepheiPrefs

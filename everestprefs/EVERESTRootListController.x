@@ -24,6 +24,10 @@
     self.iconView.alpha = 0.0;
     [self.navigationItem.titleView addSubview:self.iconView];
 
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(easterEgg)];
+    doubleTap.numberOfTapsRequired = 2; 
+    [self.view addGestureRecognizer:doubleTap];
+
     self.headerView =
         [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 180)]; // 180
     self.headerView.clipsToBounds = YES;
@@ -89,6 +93,28 @@
     ]];
   }
   return self;
+}
+
+-(void)easterEgg {
+	animation = (int)arc4random_uniform(9) + 1;
+	if (animation == 1) {
+		[%c(EverestAnimations) shrinkAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 2) {
+		[%c(EverestAnimations) flipVerticalAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 3) {
+		[%c(EverestAnimations) flipHorizontalAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 4) {
+		[%c(EverestAnimations) rotateClockwiseAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 5) {
+		[%c(EverestAnimations) rotateCounterClockwiseAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 6) {
+		[%c(EverestAnimations) tadaAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 7) {
+		[%c(EverestAnimations) pulseAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 8) {
+		[%c(EverestAnimations) swingAnimationForIconView:self.headerView withDuration:duration];
+	} else if (animation == 9) {
+	}
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
