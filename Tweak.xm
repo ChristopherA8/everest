@@ -78,7 +78,7 @@ int animation = 1;
 	preferences = [[HBPreferences alloc] initWithIdentifier:@"com.christopher.everestprefs"];
 	[preferences registerFloat:&duration default:0.8f forKey:@"duration"];
 	[preferences registerDefaults:@{
-        @"Enabled": @YES,
+        @"enabled": @YES,
         @"animation": @0
     }];
 }
