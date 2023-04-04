@@ -5,7 +5,7 @@
 <h3 align="right">App launch animations for iOS 14.x-16.x, <br>built with Theos/Luz</h3> 
 
 <p align="right" >
-  <strong><a href="placeholder">Havoc</a></strong>
+  <strong><a href="https://havoc.app/package/everest">Havoc</a></strong>
   •
   <strong><a href="https://github.com/ChristopherA8/everest/graphs/contributors">Contributors</a></strong>
   •
