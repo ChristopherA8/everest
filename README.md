@@ -15,4 +15,7 @@
 </p>
 <div class="clear"></div>
 
-## ~~Rootless version for palera1n/fugu15/bakera1n etc...~~ Rootfull version
+<br></br>
+<img width="375" height="667" alt="646756355-3577559e-2f86-4c9c-91a8-b222baceed05" src="https://github.com/user-attachments/assets/cfb84abd-76c9-4ccb-983c-d514b3ef026d" />
+<img width="375" height="667" alt="646756356-df4f0b00-5f78-4186-9c42-333097e1d886" src="https://github.com/user-attachments/assets/d765ffb4-83c5-4c30-82cf-1366d201511a" />
+
