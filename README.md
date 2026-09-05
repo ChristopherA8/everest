@@ -2,7 +2,7 @@
 	<source media="(prefers-color-scheme: light)" srcset="https://repo.chr1s.dev/assets/Everest/everest_dark-min.png">
 	<img align="left" height="120" src="https://repo.chr1s.dev/assets/Everest/everest_light-min.png" alt="Everest logo" style="float: left;"/>
 </picture>
-<h3 align="right">App launch animations for iOS 14.x-16.x, <br>built with Theos/Luz</h3> 
+<h3 align="right">App launch animations for iOS 14.x-26.x, <br>built with Theos/Luz</h3> 
 
 <p align="right" >
   <strong><a href="https://havoc.app/package/everest">Havoc</a></strong>
